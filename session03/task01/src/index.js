@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 
 const name = "Jessica";
 
-function Profile() {
-   if (name) {
+function Profile(props) {
+   if (name.toLowerCase === "jessica") {
     return <main id="content" role="main" class="base">
             <h1>{name}'s React Page</h1>
               <p>I love to travel!</p>
