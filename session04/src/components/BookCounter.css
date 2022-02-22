@@ -1,0 +1,20 @@
+h1, h2, li, button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: #878c91;
+    cursor: pointer;
+    color: #fff;
+}
+
+.booklist {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
