@@ -1,7 +1,39 @@
 import React from 'react';
+import App from '../App';
+import PropTypes from 'prop-types';
 
-function Book() {
-  return "This is the output of a book component";
+
+
+
+const Book = (props) => {
+
+  const { id,
+    saleInfo: {retailPrice},
+    volumeInfo: {title, authors, description,
+    imageLinks: {thumbnail}
+    }
+  } = props.book;
+
+  return (
+    <div>
+      <h2>{title}</h2>
+      <img src={thumbnail} alt="thumbnail"/>
+      <p>
+        by { authors ? authors.join(', ') : "No authors listed."}
+      </p>
+      <p>{description}</p>
+    </div>
+  ) 
 }
 
-export default App;
+Book.propTypes = {
+  volumeInfo: PropTypes.shape({title: PropTypes.string.isRequired}),
+  authors: PropTypes.array.isRequired,
+  description: PropTypes.string,
+  price: PropTypes.number.isRequired
+ };
+
+
+ 
+
+export default Book;
