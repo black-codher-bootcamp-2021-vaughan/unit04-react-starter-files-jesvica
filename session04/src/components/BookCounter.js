@@ -9,7 +9,18 @@ const BookCounter = (props) => {
 
       <button onClick={() => props.refreshBooks()}>Refresh Books</button>
 
-      {props.library.books.map((book) => (<li>{book.title}</li>))}
+      {
+      props.library.books.map((book) => (
+        <div>
+        <img src={book.volumeInfo.imageLinks.thumbnail} alt=""/> 
+        <h3>{book.volumeInfo.title}</h3>
+        <h4>{book.volumeInfo.authors}</h4>
+        <p>{book.volumeInfo.retailPrice}</p>
+        <p>{book.volumeInfo.description}</p>
+        </div>
+      ))
+      }
+
     </main>
   );
 }
